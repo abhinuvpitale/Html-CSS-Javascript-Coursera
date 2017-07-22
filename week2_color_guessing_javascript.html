@@ -1,0 +1,47 @@
+<html>
+	<head>
+	</head>
+	<body>
+	<script>
+	color = ['aqua','black','cyan','pink','red','yellow']
+	len = 6
+	target = Math.floor((Math.random()*6))
+	console.log(target)
+	targetcolor = color[target]
+	console.log(targetcolor)
+	flag = true
+	gamecase = 0;
+	count = 0;
+	while(flag)
+	{
+		count++;
+		returntext = prompt("Tell me my colour - ['aqua','black','cyan','pink','red','yellow']")
+			
+		if( returntext == targetcolor)
+		{
+			flag = false
+			window.alert('Amazing. You guessed it right in '+count+' tries');
+			myBody=document.getElementsByTagName("body")[0];
+			myBody.style.background=targetcolor;
+		}
+		else
+		{
+			if(color.indexOf(returntext) == -1)
+				window.alert('Oops something went wrong, try again with a valid colour');
+			else if (returntext > targetcolor)
+			{
+				window.alert('My colour is alphabetically lower than yours, try again');
+			}
+			else if( returntext < targetcolor)
+			{
+				window.alert('My colour is alphabetically higher than yours, try again');
+			}
+		}
+		
+				
+		
+	}
+	
+	</script>
+	</body>
+</html>
